@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child and Decendent Selector</title>
+    <Style>
+        /* Child selector */
+        div > p{
+            color: blue;
+            font-weight: bold;
+        }
+        /* Decendent tag */
+        div span{
+            color: brown;
+            text-decoration: underline;
+        }
+    </Style>
+</head>
+<body>
+    <div>
+        <p>Direct Child</p>
+        <section>
+            <p>This is not a direct Child</p>
+        </section>
+        <span>
+            This span is inside the div 
+        </span>
+        <div><span></span></div>
+    </div>
+    
+</body>
+</html>
