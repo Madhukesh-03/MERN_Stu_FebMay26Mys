@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout designs with sidebar</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <main class="max-w-4xl mx-auto p-6 space-y-8">
+        <section class="border rounded overflow-hidden bg-gray-50">
+            <div class="flex min-h-[360px]">
+                <aside class="w-64 flex-none border-r p-4 space-y-3 ">
+                    <div class="fixed top-4 p-4 space-y-2">
+                        <div class="font-bold">
+                            Sidebar
+                        </div>
+                        <a href="#" class="block text-sm hover:underline">
+                            Dashboard
+                        </a>
+                        <a href="#" class="block text-sm hover:underline">
+                            Courses
+                        </a>
+                        <a href="#" class="block text-sm hover:underline">
+                            Reports
+                        </a>
+                        <a href="#" class="block text-sm hover:underline">
+                            Settings
+                        </a>
+                    </div>
+                </aside>
+                <section class="flex-1 p-6 space-y-4">
+                    <h1 class="text-lg font-bold">Main Content</h1>
+                    <div class="grid grid-col-1 md:grid-cols-2 gap-4">
+                        <div class="border rounded p-4">Card A</div>
+                        <div class="border rounded p-4">Card B</div>
+                        <div class="border rounded p-4">Card C - ontrary to popular belief, Lorem Ipsum is not simply
+                            random text. It has roots in a piece of classical Latin literature from 45 BC, making it
+                            over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
+                            Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
+                            passage, and going through the cites of the word in classical literature, discovered the
+                            undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
+                            Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book
+                            is a treatise on the theory of ethics, very popular during the Renaissance. The first line
+                            of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+                            also reproduced in their exact original form, accompanied by English versions from the 1914
+                            translation by H. Rackham.
+
+                            Where can I get some?
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                            generators on the Internet tend to repeat predefined chunks as necessary, making this the
+                            first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
+                            with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+                            non-characteristic words etc.</div>
+                        <div class="border rounded p-4">Card D</div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="aspect-video rounded flex items-center justify-center">
+                16:9(aspect-video)
+            </div>
+
+        </section>
+</body>
+
+</html>
