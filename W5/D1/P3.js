@@ -3,6 +3,6 @@ console.log("1.Script started");
 
 //setTimeOut
 setTimeout(()=>{
-    console.log("3. Timer callback finished after waiting");
+    console.log("3. Timer callback finished aftr waiting");
 },10000);
 console.log("2.Script continued without awaiting for timer callback");
