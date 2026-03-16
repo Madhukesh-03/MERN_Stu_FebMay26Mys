@@ -1,4 +1,4 @@
-//stop the script if a command fails
+//stopping the script if a command fails
 set -e
 
 echo "Checking Node.js installation"
