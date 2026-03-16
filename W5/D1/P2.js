@@ -1,5 +1,5 @@
 const items = {
-    item1: "Laptop",
+    item1: "Lapto",
     item2: "Server",
     item3: "cloudAPI"
 };
