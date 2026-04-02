@@ -14,7 +14,7 @@ app.get("/set-language",function(req,res){
 app.get("/read-language",function(req,res){
     const language = req.cookies.language;
 
-    res.json({
+    res.send({
         message:"Cookie read from request.",
         language: language || "No language cookie found"
     });
