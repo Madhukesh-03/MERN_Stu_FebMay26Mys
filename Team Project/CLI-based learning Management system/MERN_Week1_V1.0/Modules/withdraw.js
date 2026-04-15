@@ -1,4 +1,4 @@
-//withdra file is using to withdraw the course
+//withdraw file is using to withdraw the course
 const emitter = require('../events/events');
 const chalk = require('chalk');
 
