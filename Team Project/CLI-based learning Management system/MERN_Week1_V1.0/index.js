@@ -1,8 +1,8 @@
-// This file connects all modules and starts the CLI program
 const readline = require('readline');
 
 const courses = require('./data/courses');
-const { enrollCourse, getUserEnrollments } = require('./Modules/enroll');
+const { enrollCourse, enrolledCourses, getUserEnrollments } = require('./modules/enroll');
+const { completeLesson, getProgress } = require('./modules/progress');
 
 // CLI setup
 const rl = readline.createInterface({
@@ -10,13 +10,13 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-// helper function
+
 function askQuestion(query) {
     return new Promise(resolve => rl.question(query, resolve));
 }
 
 async function main() {
-    console.log("=== LMS CLI ===");
+    // console.log("=== LMS CLI ===");
 
     const userName = await askQuestion("Enter your name: ");
     console.log(`Welcome ${userName}!\n`);
@@ -26,8 +26,10 @@ async function main() {
 1. View Courses
 2. Enroll in Course
 3. My Courses
-4. Exit
-        `);
+4. Complete Lesson
+5. View Progress
+6. Exit
+`);
 
         const choice = await askQuestion("Choose: ");
 
@@ -73,8 +75,39 @@ async function main() {
                 }
                 break;
 
-            //  Exit
             case "4":
+                const cId = await askQuestion("Enter Course ID: ");
+                const lesson = await askQuestion("Enter Lesson Name: ");
+
+                try {
+                    const msg = await completeLesson(enrolledCourses, userName, Number(cId), lesson);
+                    console.log(msg);
+                } catch (err) {
+                    console.log(err);
+                }
+                break;
+
+            case "5":
+                const progress = getProgress(enrolledCourses, userName);
+
+                if (progress.length === 0) {
+                    console.log("No enrolled courses");
+                } else {
+                    console.log("\nYour Progress:");
+                    progress.forEach(p => {
+                        console.log(`
+Course: ${p.title}
+Completed: ${p.completedLessons.join(", ") || "None"}
+Pending: ${p.pendingLessons}
+Progress: ${p.progress}
+`);
+                    });
+                }
+                break;
+
+
+            //  Exit
+            case "5":
                 console.log("Goodbye!");
                 rl.close();
                 return;
